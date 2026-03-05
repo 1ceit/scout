@@ -42,20 +42,24 @@
         </div>
         <div id="auto" class="area">
           <div class="statBox">
-            <h2>Fuel Missed</h1>
-            <div class="input">
-              <button onclick="ibutton(-1,`fuelAuto`)">-</button>
-              <input id="fuelAuto" placeholder="0" type="number" class="numberBox">
-              <button onclick="ibutton(1,`fuelAuto`)">+</button>
-            </div>
-          </div>
-          <div class="statBox">
             <h2>Outpost Fuel</h1>
             <div class="input">
               <button onclick="ibutton(-1,`depotAuto`)">-</button>
               <input id="depotAuto" placeholder="0" type="number" class="numberBox">
               <button onclick="ibutton(1,`depotAuto`)">+</button>
             </div>
+          </div>
+          <div class="statBox">
+            <h2>Consistency</h1>
+              <div class="input">
+                <select id="consistencyAuto">
+                  <option value="0">0 - Didn't Attempt</option>
+                  <option value="0.25">1 - Frequently Missed</option>
+                  <option value="0.5">2 - Every Other Shot</option>
+                  <option value="0.25">3 - Frequently Scored</option>
+                  <option value="1">4 - Didn't Miss</option>
+                </select>
+              </div>
           </div>
           <div class="statBox">
             <h2>Climb</h1>
@@ -72,20 +76,24 @@
         </div>
         <div id="teleop" class="area">
           <div class="statBox">
-            <h2>Fuel Missed</h1>
-            <div class="input">
-              <button onclick="ibutton(-1,`fuelTele`)">-</button>
-              <input id="fuelTele" placeholder="0" type="number" class="numberBox">
-              <button onclick="ibutton(1,`fuelTele`)">+</button>
-            </div>
-          </div>
-          <div class="statBox">
             <h2>Outpost Fuel</h1>
             <div class="input">
               <button onclick="ibutton(-1,`depotTele`)">-</button>
               <input id="depotTele" placeholder="0" type="number" class="numberBox">
               <button onclick="ibutton(1,`depotTele`)">+</button>
             </div>
+          </div>
+          <div class="statBox">
+            <h2>Consistency</h1>
+              <div class="input">
+                <select id="consistencyTele">
+                  <option value="0">0 - Didn't Attempt</option>
+                  <option value="0.25">1 - Frequently Missed</option>
+                  <option value="0.5">2 - Every Other Shot</option>
+                  <option value="0.25">3 - Frequently Scored</option>
+                  <option value="1">4 - Didn't Miss</option>
+                </select>
+              </div>
           </div>
           <div class="statBox">
             <h2>Climb</h1>

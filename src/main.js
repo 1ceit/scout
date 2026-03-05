@@ -71,10 +71,10 @@ function appendData() {
     team: getV("team"),
     match: getV("match"),
     comp: getV("comp"),
-    fuelAuto: getV("fuelAuto"),
+    consistencyAuto: getV("consistencyAuto"),
     depotAuto: getV("depotAuto"),
     climbAuto: getV("climbAuto"),
-    fuelTele: getV("fuelTele"),
+    consistencyTele: getV("consistencyTele"),
     depotTele: getV("depotTele"),
     climbTele: getV("climbTele"),
     notes: getV("notes")
@@ -170,10 +170,10 @@ function saveForm() {
     team: getV("team"),
     match: getV("match"),
     comp: getV("comp"),
-    fuelAuto: getV("fuelAuto"),
+    consistencyAuto: getV("consistencyAuto"),
     depotAuto: getV("depotAuto"),
     climbAuto: getV("climbAuto"),
-    fuelTele: getV("fuelTele"),
+    consistencyTele: getV("consistencyTele"),
     depotTele: getV("depotTele"),
     climbTele: getV("climbTele"),
     notes: getV("notes")
@@ -192,10 +192,10 @@ window.onload = function() {
     setV("team",data.team);
     setV("match",data.match);
     setV("comp",data.comp);
-    setV("fuelAuto",data.fuelAuto);
+    setV("consistencyAuto",data.consistencyAuto);
     setV("depotAuto",data.depotAuto);
     setV("climbAuto",data.climbAuto);
-    setV("fuelTele",data.fuelTele);
+    setV("consistencyTele",data.consistencyTele);
     setV("depotTele",data.depotTele);
     setV("climbTele",data.climbTele);
     setV("notes",data.notes);
@@ -231,10 +231,10 @@ function setV(item,v) {
 function clear() {
   setV("team","");
   setV("match",(isNaN(getV("match")) ? getV("match") : parseInt(getV("match")) + 1));
-  setV("fuelAuto","");
+  setV("consistencyAuto","");
   setV("depotAuto","");
   setV("climbAuto",0),
-  setV("fuelTele","");
+  setV("consistencyTele","");
   setV("depotTele","");
   setV("climbTele",0);
   setV("notes","");
