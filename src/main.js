@@ -229,17 +229,17 @@ function setV(item,v) {
 }
 
 function clear() {
-    setV("team","");
-    setV("match",(isNaN(getV("match")) ? getV("match") : parseInt(getV("match")) + 1));
-    setV("fuelAuto","");
-    setV("depotAuto","");
-    setV("climbAuto",0),
-    setV("fuelTele","");
-    setV("depotTele","");
-    setV("climbTele",0);
-    setV("notes","");
-    
-    updateTeamList();
+  setV("team","");
+  setV("match",(isNaN(getV("match")) ? getV("match") : parseInt(getV("match")) + 1));
+  setV("fuelAuto","");
+  setV("depotAuto","");
+  setV("climbAuto",0),
+  setV("fuelTele","");
+  setV("depotTele","");
+  setV("climbTele",0);
+  setV("notes","");
+  
+  updateTeamList();
 }
 
 // add or remove from a number value
