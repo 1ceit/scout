@@ -73,10 +73,12 @@ function appendData() {
     comp: getV("comp"),
     consistencyAuto: getV("consistencyAuto"),
     depotAuto: getV("depotAuto"),
-    climbAuto: getV("climbAuto"),
+    climbAuto: Math.round(getV("climbAuto")),
+    climbAutoLoc: (getV("climbAuto") % 1) * 10,
     consistencyTele: getV("consistencyTele"),
     depotTele: getV("depotTele"),
-    climbTele: getV("climbTele"),
+    climbTele: Math.round(getV("climbTele")),
+    climbTeleLoc: (getV("climbTele") % 1) * 10,
     notes: getV("notes")
   };
 
@@ -172,10 +174,12 @@ function saveForm() {
     comp: getV("comp"),
     consistencyAuto: getV("consistencyAuto"),
     depotAuto: getV("depotAuto"),
-    climbAuto: getV("climbAuto"),
+    climbAuto: Math.round(getV("climbAuto")),
+    climbAutoLoc: (getV("climbAuto") % 1) * 10,
     consistencyTele: getV("consistencyTele"),
     depotTele: getV("depotTele"),
-    climbTele: getV("climbTele"),
+    climbTele: Math.round(getV("climbTele")),
+    climbTeleLoc: (getV("climbTele") % 1) * 10,
     notes: getV("notes")
   };
   localStorage.setItem('flipSave', JSON.stringify(formData));
@@ -194,10 +198,10 @@ window.onload = function() {
     setV("comp",data.comp);
     setV("consistencyAuto",data.consistencyAuto);
     setV("depotAuto",data.depotAuto);
-    setV("climbAuto",data.climbAuto);
+    setV("climbAuto",data.climbAuto + data.climbAutoLoc);
     setV("consistencyTele",data.consistencyTele);
     setV("depotTele",data.depotTele);
-    setV("climbTele",data.climbTele);
+    setV("climbTele",data.climbTele + data.climbTeleLoc);
     setV("notes",data.notes);
   }
 };
