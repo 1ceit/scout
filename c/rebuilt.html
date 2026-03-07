@@ -40,15 +40,18 @@
         <div id="auto" class="area">
           <div class="statBox labelBox"><h2>Auto</h2></div>
           <div class="statBox">
-            <h2>Fuel Delivered to Outpost</h1>
-            <div class="input">
-              <button onclick="ibutton(-1,`depotAuto`)">-</button>
-              <input id="depotAuto" placeholder="0" type="number" class="numberBox">
-              <button onclick="ibutton(1,`depotAuto`)">+</button>
-            </div>
+            <h2>Scoring Method</h2>
+              <div class="input">
+                <select id="methodsAuto">
+                  <option value="None">N/A</option>
+                  <option value="Hub">Hub Only</option>
+                  <option value="Outpost">Outpost Only</option>
+                  <option value="Both">Both</option>
+                </select>
+              </div>
           </div>
           <div class="statBox">
-            <h2>Consistency</h1>
+            <h2>Consistency</h2>
               <div class="input">
                 <select id="consistencyAuto">
                   <option value="0">0 - Didn't Attempt</option>
@@ -60,7 +63,7 @@
               </div>
           </div>
           <div class="statBox">
-            <h2>Climb</h1>
+            <h2>Climb</h2>
               <div class="input">
                 <select id="climbAuto">
                   <option value="0">N/A</option>
@@ -74,15 +77,18 @@
         <div id="teleop" class="area">
           <div class="statBox labelBox"><h2>Teleop</h2></div>
           <div class="statBox">
-            <h2>Fuel Delivered to Outpost</h1>
-            <div class="input">
-              <button onclick="ibutton(-1,`depotTele`)">-</button>
-              <input id="depotTele" placeholder="0" type="number" class="numberBox">
-              <button onclick="ibutton(1,`depotTele`)">+</button>
-            </div>
+            <h2>Scoring Method</h2>
+              <div class="input">
+                <select id="methodsTele">
+                  <option value="None">N/A</option>
+                  <option value="Hub">Hub Only</option>
+                  <option value="Outpost">Outpost Only</option>
+                  <option value="Both">Both</option>
+                </select>
+              </div>
           </div>
           <div class="statBox">
-            <h2>Consistency</h1>
+            <h2>Consistency</h2>
               <div class="input">
                 <select id="consistencyTele">
                   <option value="0">0 - Didn't Attempt</option>
@@ -94,7 +100,7 @@
               </div>
           </div>
           <div class="statBox">
-            <h2>Climb</h1>
+            <h2>Climb</h2>
             <div class="input">
               <select id="climbTele">
                 <option value="0">N/A</option>
@@ -112,7 +118,18 @@
           </div>
         </div>
         <div class="area">
-          <textarea id="notes" placeholder="Notes on performance... (This is important!)"></textarea>
+          <div class="statBox labelBox"><h2>Notes</h2></div>
+          <div class="statBox">
+            <h2>Fouls / Penalties</h2>
+            <textarea id="fouls" class="notes" placeholder="Leave blank if N/A"></textarea>
+          </div>
+          <div class="statBox">
+            <h2>Intake Style</h2>
+            <textarea id="intake" class="notes" placeholder="Include when / where intake took place"></textarea>
+          </div>
+        </div>
+        <div class="area">
+          <textarea class="notes" id="notes" placeholder="Additional notes on performance. Include information on play style, scoring, etc..."></textarea>
         </div>
       </div>
       <button id="submit" onclick="appendData()">Submit</button>

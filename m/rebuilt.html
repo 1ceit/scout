@@ -42,12 +42,15 @@
         </div>
         <div id="auto" class="area">
           <div class="statBox">
-            <h2>Outpost Fuel</h1>
-            <div class="input">
-              <button onclick="ibutton(-1,`depotAuto`)">-</button>
-              <input id="depotAuto" placeholder="0" type="number" class="numberBox">
-              <button onclick="ibutton(1,`depotAuto`)">+</button>
-            </div>
+            <h2>Methods</h1>
+              <div class="input">
+                <select id="methodsAuto">
+                  <option value="None">N/A</option>
+                  <option value="Hub">Hub Only</option>
+                  <option value="Outpost">Outpost Only</option>
+                  <option value="Both">Both</option>
+                </select>
+              </div>
           </div>
           <div class="statBox">
             <h2>Consistency</h1>
@@ -78,12 +81,15 @@
         </div>
         <div id="teleop" class="area">
           <div class="statBox">
-            <h2>Outpost Fuel</h1>
-            <div class="input">
-              <button onclick="ibutton(-1,`depotTele`)">-</button>
-              <input id="depotTele" placeholder="0" type="number" class="numberBox">
-              <button onclick="ibutton(1,`depotTele`)">+</button>
-            </div>
+            <h2>Methods</h1>
+              <div class="input">
+                <select id="methodsTele">
+                  <option value="None">N/A</option>
+                  <option value="Hub">Hub Only</option>
+                  <option value="Outpost">Outpost Only</option>
+                  <option value="Both">Both</option>
+                </select>
+              </div>
           </div>
           <div class="statBox">
             <h2>Consistency</h1>
@@ -116,7 +122,7 @@
           </div>
         </div>
         <div class="area">
-          <textarea id="notes" placeholder="Notes on performance... (This is important!)"></textarea>
+          <textarea id="notes" placeholder="Additional notes on performance. Include information on play style, scoring, fouls, intake playstyle, etc..."></textarea>
         </div>
       </div>
       <button id="submit" onclick="appendData()">Submit</button>

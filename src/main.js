@@ -72,13 +72,15 @@ function appendData() {
     match: getV("match"),
     comp: getV("comp"),
     consistencyAuto: getV("consistencyAuto"),
-    depotAuto: getV("depotAuto"),
+    methodsAuto: getV("methodsAuto"),
     climbAuto: Math.round(getV("climbAuto")),
     climbAutoLoc: (getV("climbAuto") % 1) * 10,
     consistencyTele: getV("consistencyTele"),
-    depotTele: getV("depotTele"),
+    methodsTele: getV("methodsTele"),
     climbTele: Math.round(getV("climbTele")),
     climbTeleLoc: (getV("climbTele") % 1) * 10,
+    intake: getV("intake"),
+    fouls: getV("fouls"),
     notes: getV("notes")
   };
 
@@ -173,13 +175,15 @@ function saveForm() {
     match: getV("match"),
     comp: getV("comp"),
     consistencyAuto: getV("consistencyAuto"),
-    depotAuto: getV("depotAuto"),
+    methodsAuto: getV("methodsAuto"),
     climbAuto: Math.round(getV("climbAuto")),
-    climbAutoLoc: (getV("climbAuto") % 1) * 10,
+    climbAutoLoc: Math.round((getV("climbAuto") % 1) * 10),
     consistencyTele: getV("consistencyTele"),
-    depotTele: getV("depotTele"),
+    methodsTele: getV("methodsTele"),
     climbTele: Math.round(getV("climbTele")),
-    climbTeleLoc: (getV("climbTele") % 1) * 10,
+    climbTeleLoc: Math.round((getV("climbTele") % 1) * 10),
+    intake: getV("intake"),
+    fouls: getV("fouls"),
     notes: getV("notes")
   };
   localStorage.setItem('flipSave', JSON.stringify(formData));
@@ -197,12 +201,14 @@ window.onload = function() {
     setV("match",data.match);
     setV("comp",data.comp);
     setV("consistencyAuto",data.consistencyAuto);
-    setV("depotAuto",data.depotAuto);
+    setV("methodsAuto",data.methodsAuto);
     setV("climbAuto",data.climbAuto + data.climbAutoLoc);
     setV("consistencyTele",data.consistencyTele);
-    setV("depotTele",data.depotTele);
+    setV("methodsTele",data.methodsTele);
     setV("climbTele",data.climbTele + data.climbTeleLoc);
     setV("notes",data.notes);
+    setV("intake",data.intake);
+    setV("fouls",data.fouls);
   }
 };
 
@@ -225,23 +231,27 @@ const checkForFlip = setInterval(function() {
 // --------------------------------------------------------------------------------------------------------------------------
 
 function getV(item) {
+  if(!document.getElementById(item)) return null;
   return document.getElementById(item).value;
 }
 
 function setV(item,v) {
+  if(!document.getElementById(item)) return;
   document.getElementById(item).value = v;
 }
 
 function clear() {
   setV("team","");
   setV("match",(isNaN(getV("match")) ? getV("match") : parseInt(getV("match")) + 1));
-  setV("consistencyAuto","");
-  setV("depotAuto","");
-  setV("climbAuto",0),
-  setV("consistencyTele","");
-  setV("depotTele","");
-  setV("climbTele",0);
+  setV("consistencyAuto",0);
+  setV("methodsAuto","None");
+  setV("climbAuto",0.0),
+  setV("consistencyTele",0);
+  setV("methodsTele","None");
+  setV("climbTele",0.0);
   setV("notes","");
+  setV("intake","");
+  setV("fouls","");
   
   updateTeamList();
 }

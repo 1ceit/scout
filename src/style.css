@@ -107,7 +107,7 @@ body {
 }
 
 .area {
-  padding: min(2.5vw, 2.5vh);
+  padding: min(1.75vw, 1.75vh);
   display: flex;
   flex-direction: row;
   background-color: white;
@@ -133,14 +133,17 @@ body {
   text-align: center;
 }
 
-#notes {
-  width: 100%;
+.notes {
   text-align: left;
   padding: min(1.5vw, 1.5vh);
   border: none;
   border-radius: min(1.25vw, 1.25vh);
   resize: none;
   box-shadow: 0px 0px 10px hsla(0, 0%, 0%, 0.1);
+}
+
+#notes {
+  width: 100%;
 }
 
 select:focus-visible, input:focus-visible, button:focus-visible {
@@ -150,8 +153,8 @@ select:focus-visible, input:focus-visible, button:focus-visible {
 select:hover, input:hover, button:hover {
   background-color: #eee;
 }
-
-#notes:focus-visible {
+ 
+.notes:focus-visible {
   border: none;
   border-radius: min(1.25vw, 1.25vh);
   outline: none;
@@ -197,4 +200,9 @@ input {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+.baseInput {
+  width: 15vw;
+  max-width: 15vh;
 }
